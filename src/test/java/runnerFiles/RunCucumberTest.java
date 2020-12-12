@@ -6,8 +6,8 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 @CucumberOptions(  
 		  plugin = {"pretty"},   
 		  features = {"src/test/resources/featureFiles"},  
-		  glue = {"src/main/java/stepDefinations"}, 
-		  tags="@browsertest") 
+		  glue = {"stepDefinations"}, 
+		  tags="@browsertest",strict = true) 
 
 public class RunCucumberTest extends AbstractTestNGCucumberTests {
 
