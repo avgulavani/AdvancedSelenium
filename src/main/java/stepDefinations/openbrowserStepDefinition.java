@@ -1,7 +1,7 @@
 package stepDefinations;
 
-import java.util.logging.Logger;
-
+import org.apache.commons.logging.Log;
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -13,6 +13,7 @@ import cucumber.api.java.en.When;
 
 public class openbrowserStepDefinition {
 	
+	 private static Logger Log = Logger.getLogger(Log.class.getName());//
 
 	 WebDriver driver;			
 		
@@ -27,9 +28,11 @@ public class openbrowserStepDefinition {
 	        chromeOptions.addArguments("--disable-dev-shm-usage");
 	        chromeOptions.addArguments("--headless");
 	        chromeOptions.addArguments("--window-size=1580,1280");
+	        chromeOptions.setHeadless(true);
 	       
 	       driver= new ChromeDriver	();					
 	       driver.manage().window().maximize();			
+	       Log.info("Opening browser");
 	       driver.get("http://demo.guru99.com/v4");					
 	    }		
 

@@ -6,22 +6,22 @@
 	<groupId>seleniumLearn</groupId>
 	<artifactId>learn.cucumber</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	
-	 <properties>
-        <encoding>UTF-8</encoding>
-        <java.source.version>1.8</java.source.version>
-        <java.target.version>1.8</java.target.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <slf4j-simple.version>1.7.25</slf4j-simple.version>
 
-        <maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
-        <maven-assembly-plugin.version>2.6</maven-assembly-plugin.version>
-        <fasterxml.version>2.8.11</fasterxml.version>
-     
-        <cucumber.version>4.2.6</cucumber.version>
-        <test-framework.version>1.8</test-framework.version>
-        </properties>
+	<properties>
+		<encoding>UTF-8</encoding>
+		<java.source.version>1.8</java.source.version>
+		<java.target.version>1.8</java.target.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<slf4j-simple.version>1.7.25</slf4j-simple.version>
+
+		<maven-surefire-plugin.version>3.0.0-M3</maven-surefire-plugin.version>
+		<maven-assembly-plugin.version>2.6</maven-assembly-plugin.version>
+		<fasterxml.version>2.8.11</fasterxml.version>
+
+		<cucumber.version>4.2.6</cucumber.version>
+		<test-framework.version>1.8</test-framework.version>
+	</properties>
 	<build>
 		<plugins>
 			<plugin>
@@ -56,7 +56,7 @@
 		<dependency>
 			<groupId>io.cucumber</groupId>
 			<artifactId>cucumber-java</artifactId>
-			 <version>${cucumber.version}</version>
+			<version>${cucumber.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>io.cucumber</groupId>
@@ -72,6 +72,12 @@
 			<groupId>info.cukes</groupId>
 			<artifactId>gherkin</artifactId>
 			<version>2.7.3</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
 		</dependency>
 	</dependencies>
 </project>
