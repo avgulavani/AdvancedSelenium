@@ -1,9 +1,11 @@
 package stepDefinations;
 
+import java.util.logging.Logger;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -18,6 +20,8 @@ public class openbrowserStepDefinition {
 	    public void open_the_Firefox_and_launch_the_application() throws Throwable							
 	    {		
 	       System.setProperty("webdriver.chrome.driver", "/Users/a.vitthal.gulavani/git/ipt-ie-automation-tests/chromedriver");					
+	       ChromeOptions chromeOptions=new ChromeOptions();
+	       chromeOptions.addArguments("--headless");
 	       driver= new ChromeDriver	();					
 	       driver.manage().window().maximize();			
 	       driver.get("http://demo.guru99.com/v4");					
