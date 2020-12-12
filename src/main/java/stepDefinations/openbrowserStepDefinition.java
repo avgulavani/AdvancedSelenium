@@ -21,7 +21,13 @@ public class openbrowserStepDefinition {
 	    {		
 	       System.setProperty("webdriver.chrome.driver", "/Users/a.vitthal.gulavani/git/ipt-ie-automation-tests/chromedriver");					
 	       ChromeOptions chromeOptions=new ChromeOptions();
-	       chromeOptions.addArguments("--headless");
+	       chromeOptions.addArguments("--disable-gpu");
+	        chromeOptions.addArguments("--disable-extensions");
+	        chromeOptions.addArguments("--no-sandbox");
+	        chromeOptions.addArguments("--disable-dev-shm-usage");
+	        chromeOptions.addArguments("--headless");
+	        chromeOptions.addArguments("--window-size=1580,1280");
+	       
 	       driver= new ChromeDriver	();					
 	       driver.manage().window().maximize();			
 	       driver.get("http://demo.guru99.com/v4");					
