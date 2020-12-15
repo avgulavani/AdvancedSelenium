@@ -13,7 +13,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 public class WebDriverManager {
 
 	private WebDriver driver;
-	protected  String enviornmentvalue;
+	public  String enviornmentvalue;
 
 	private static final String CHROME_DRIVER_PROPERTY = "webdriver.chrome.driver";
 
