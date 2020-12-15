@@ -24,7 +24,8 @@ public class WebDriverManager {
 	}
 
 	public String getEnvironmentValue() {
-		this.enviornmentvalue= System.getProperties().getProperty("enviornment");
+		this.enviornmentvalue= System.getProperty("enviornment");
+		System.out.println("value from jenkins is" +enviornmentvalue);
 		
 		if (this.enviornmentvalue!=null) {
 			return enviornmentvalue;
