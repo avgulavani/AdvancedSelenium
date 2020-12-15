@@ -24,12 +24,12 @@ public class WebDriverManager {
 	}
 
 	public String getEnvironmentValue() {
-		this.enviornmentvalue= System.getProperty("enviornment");
-		System.out.println("value from jenkins is" +enviornmentvalue);
+		this.enviornmentvalue=  System.getProperties().getProperty("ENVIORNMENT");
+		System.out.println("value from jenkins is" + enviornmentvalue);
 		if (enviornmentvalue!=null) {
 			return enviornmentvalue;
 		}
-		else return "local";
+		else return "local";	
 	}	
 
 	private WebDriver createDriver() {
