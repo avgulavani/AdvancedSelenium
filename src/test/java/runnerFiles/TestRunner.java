@@ -1,17 +1,16 @@
 
 package runnerFiles;
 
-import org.junit.runner.RunWith;
-
 import cucumber.api.CucumberOptions;
-import cucumber.api.junit.Cucumber;
+import cucumber.api.testng.AbstractTestNGCucumberTests;
 
-@RunWith(Cucumber.class)
+
+//@RunWith(Cucumber.class)
 @CucumberOptions( 
-		features = "src/test/resources/featureFiles", 
+		features = "src/test/java/featureFiles/open_browser.feature", 
 		glue = {"stepdef" }
 		)
 
-public class TestRunner {
+public class TestRunner extends AbstractTestNGCucumberTests  {
 
 }
