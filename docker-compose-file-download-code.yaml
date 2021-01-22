@@ -1,0 +1,48 @@
+version: "3"
+services:
+  hub:
+    image: selenium/hub:3.14
+  chrome:
+    image: selenium/node-chrome:3.14      
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+    volumes:
+      - ./downloads:/home/seluser/Downloads      
+  firefox:
+    image: selenium/node-firefox:3.14
+    shm_size: '1gb'   
+    depends_on:
+      - hub
+    environment:
+      - HUB_HOST=hub
+    volumes:
+      - ./downloads:/home/seluser/Downloads
+  search-module:
+    image: vinsdocker/selenium-docker
+    depends_on:
+      - chrome
+      - firefox
+    environment:
+      - HUB_HOST=hub
+      - BROWSER=firefox
+      - MODULE=search-module.xml
+    volumes:
+      - ./output/search-result:/usr/share/udemy/test-output 
+    
+# If you have any file upload scenario in your automated tests,  We need to add the below code. This is something you might have already if you are already using remote selenium grid.
+
+# //assuming driver is the name of the variable for WebDriver instance.
+# if(driver instanceof RemoteWebDriver){
+#   ((RemoteWebDriver) driver).setFileDetector(new LocalFileDetector());
+  }
+
+# Why the above code is required
+
+# It is not because of docker. It is because the machine containing the file and machine running chrome / firefox are different. So, we are sending our file from the selenium scripts machine to the selenium grid machine. In our case we have multiple containers instead of physical machines/VMs. So, we need to add the above code before you do the actual upload.
+
+# Will it affect my local testing when I do NOT use docker?
+
+# No worries. It will NOT affect your local testing.
+
