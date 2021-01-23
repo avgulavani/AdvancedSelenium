@@ -7,7 +7,7 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 //@RunWith(Cucumber.class)
 @CucumberOptions( 
-		features = "src/test/java/featureFiles/open_browser.feature", 
+		features = "src/test/resources/featureFiles/open_browser.feature", 
 		glue = {"stepdef" }
 		)
 
