@@ -3,6 +3,7 @@ stage('SCM checkout'){
   git 'https://github.com/avgulavani/AdvancedSelenium.git'
 }
 stage('Compile package'){
+  sh 'clean install  -DENVIORNMENT=$ENVIORNMENT'
   sh 'mvn package'
 }
 
